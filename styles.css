@@ -440,21 +440,35 @@ section {
 
 @media (max-width: 768px) {
   .top-menu {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: -100%;
+    left: -100%; /* Скрыто за экраном */
     width: 70%;
-    height: 100%;
+    height: 100vh;
     background: #fff;
     flex-direction: column;
-    padding: 80px 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px 20px;
     gap: 20px;
     transition: left 0.3s ease;
-    z-index: 1000;
+    z-index: 2000;
   }
 
   .top-menu.show {
-    left: 0;
+    left: 0; /* Выезжает слева */
+  }
+
+  .top-menu a {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    background: #d6b187;
+    border-radius: 6px;
+    text-align: center;
   }
 
   .burger {
@@ -467,7 +481,7 @@ section {
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 2001;
+    z-index: 2100;
   }
 
   .burger span {
@@ -475,8 +489,14 @@ section {
     height: 3px;
     background: #333;
     border-radius: 3px;
-    transition: 0.3s;
   }
+
+  /* Когда меню открыто, блокируем прокрутку */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
 
   /* Анимация крестика */
   .burger.active span:nth-child(1) {
@@ -507,6 +527,7 @@ section {
     display: block;
   }
 }
+
 
 
 
