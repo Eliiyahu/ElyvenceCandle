@@ -478,20 +478,20 @@ section {
   .top-menu {
     position: fixed;
     top: 0;
-    left: -100%; /* Вместо right */
+    left: -100%; /* прячем за левый край */
     width: 70%;
     height: 100%;
     background: #fff;
+    display: flex;
     flex-direction: column;
     padding: 80px 20px;
     gap: 20px;
-    transition: left 0.3s ease; /* Меняем right → left */
+    transition: left 0.3s ease; /* плавное выдвижение */
     z-index: 1000;
-    display: flex;
   }
 
   .top-menu.show {
-    left: 0; /* Вместо right: 0 */
+    left: 0; /* вот ключевой момент — теперь меню выезжает */
   }
 
   .burger {
@@ -504,7 +504,7 @@ section {
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 2001; /* Чтобы бургер был поверх меню */
+    z-index: 2001; /* выше меню */
   }
 
   .burger span {
@@ -513,6 +513,7 @@ section {
     background: #333;
     border-radius: 3px;
   }
+}
 
   /* Анимация крестика */
   .burger.active span:nth-child(1) {
@@ -525,6 +526,7 @@ section {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
 
 
 
