@@ -414,4 +414,64 @@ section {
   padding: 40px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* мягкая тень */
 }
+/* Десктоп */
+.top-menu {
+  display: flex;
+  gap: 10px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .top-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 80px 20px;
+    transition: 0.3s;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .top-menu.show {
+    right: 0;
+  }
+
+  .burger {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
 
