@@ -475,25 +475,32 @@ section {
   }
 }
 @media (max-width: 768px) {
-  .burger {
-    display: flex; /* показываем бургер на мобилке */
-  }
-
   .top-menu {
     position: fixed;
     top: 0;
-    right: -100%; /* скрываем меню за экраном */
-    flex-direction: column;
+    right: -100%; /* прячем меню за экран */
     width: 70%;
     height: 100%;
     background: #fff;
+    flex-direction: column;
+    gap: 20px;
     padding: 80px 20px;
-    transition: 0.3s;
+    transition: right 0.3s ease; /* плавное появление */
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
   .top-menu.show {
-    right: 0; /* выезжает меню */
+    right: 0; /* показываем меню */
+  }
+
+  .top-menu a {
+    display: block;
+    font-size: 18px;
+    padding: 10px 0;
+    color: #333;
   }
 }
+
 
 
