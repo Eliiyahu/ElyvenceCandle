@@ -478,27 +478,38 @@ section {
   .top-menu {
     position: fixed;
     top: 0;
-    right: -100%; /* прячем меню за экран */
+    right: -100%;
     width: 70%;
     height: 100%;
     background: #fff;
     flex-direction: column;
-    gap: 20px;
     padding: 80px 20px;
-    transition: right 0.3s ease; /* плавное появление */
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    transition: right 0.3s ease;
     z-index: 1000;
   }
 
   .top-menu.show {
-    right: 0; /* показываем меню */
+    right: 0;
   }
 
-  .top-menu a {
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .burger span {
     display: block;
-    font-size: 18px;
-    padding: 10px 0;
-    color: #333;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
   }
 }
 
