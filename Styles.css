@@ -1,0 +1,417 @@
+/* styles.css */
+
+/* === Общие контейнеры === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === Базовые стили === */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #faf9f7;
+  color: #333;
+}
+
+/* === HEADER с логотипом и кнопками === */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px 40px 80px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+header .logo img {
+  height: 150px; /* увеличено */
+}
+
+/* Меню с кнопками под логотипом */
+.top-menu {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.top-menu a {
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #d6b187;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.top-menu a:hover {
+  background-color: #b8966d;
+  transform: translateY(-2px);
+}
+
+/* === Бургер-меню (для мобильной версии) === */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+.burger-menu span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+}
+
+/* === HERO-ПАНЕЛЬ === */
+.hero-panel {
+  background: none;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.hero-panel .white-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 80px 20px;
+  margin: 0 auto 60px;
+  max-width: 1100px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.hero-cta {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero button {
+  padding: 14px 28px;
+  font-size: 16px;
+  background: #d6b187;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  background: #b8966d;
+}
+
+/* === Блок с эмблемами === */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding-top: 40px;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature img {
+  width: 150px;  /* увеличено */
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Первая эмблема (Handmade) — круглая */
+.feature:first-child img {
+  border-radius: 50%;
+  background: #fff; /* убираем серый фон */
+}
+
+.feature p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* === Шахматные feature-блоки === */
+.features-panel {
+  background: none;
+  padding: 0;
+}
+
+.features-panel .white-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 80px 20px;
+  margin: 0 auto 60px;
+  max-width: 1100px;
+}
+
+.feature-block {
+  padding: 60px 0;
+  background: none;
+}
+
+.feature-block .container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.feature-block.reverse .container {
+  flex-direction: row-reverse;
+}
+
+.block-image img {
+  width: 100%;
+  border-radius: 8px;
+  max-width: 500px;
+}
+
+.block-text {
+  flex: 1;
+}
+
+.block-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.block-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* === Каталог === */
+.catalog {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.catalog h1 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+/* === Фильтры === */
+.filters {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.filters button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background: #fff;
+  border: 1px solid #d6b187;
+  color: #333;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters button:hover {
+  background: #d6b187;
+  color: #fff;
+}
+
+/* === Сетка продуктов === */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.product button {
+  padding: 10px 20px;
+  background: #d6b187;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product button:hover {
+  background: #b8966d;
+}
+
+/* === Футер === */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #999;
+  background: #fff;
+  margin-top: 40px;
+}
+
+/* === Общие отступы для всех секций === */
+section {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* === АДАПТИВ === */
+@media (max-width: 768px) {
+  /* Лого и бургер */
+  header {
+    padding-bottom: 20px;
+  }
+
+  .top-menu {
+    flex-direction: column;
+    gap: 15px;
+    background: #fff;
+    padding: 20px;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-open .top-menu {
+    transform: translateY(0);
+  }
+
+  .top-menu a {
+    color: #fff;
+    background-color: #d6b187;
+    display: block;
+    text-align: center;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .catalog h1 {
+    font-size: 24px;
+  }
+
+  .feature-block .container,
+  .feature-block.reverse .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .block-image img {
+    max-width: 100%;
+  }
+}
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+}
+.payment-method label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.form-group {
+  margin-top: 20px;
+}
+.form-group h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.option {
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.option:hover {
+  background: #e7e7e7;
+}
+.option input {
+  margin-right: 10px;
+  accent-color: #d6b187; /* Радио-кнопки в стиле бренда */
+}
+.option span {
+  font-size: 16px;
+}
+.feature-block {
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* <-- Добавили тень */
+}
+.white-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); /* мягкая тень */
+}
+

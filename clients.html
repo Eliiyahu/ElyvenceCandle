@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стать постоянным клиентом | Elyvence Candle</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: #faf9f7;
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      background: #fff;
+      padding: 20px 0 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+
+    .logo img {
+      height: 120px;
+      display: block;
+      margin-bottom: 60px;
+    }
+
+    nav.top-menu {
+      margin-top: 20px;
+    }
+
+    nav.top-menu a {
+      display: inline-block;
+      margin: 0 12px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background: #d6b187;
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    nav.top-menu a:hover {
+      background: #b8966d;
+    }
+
+    /* Основной блок */
+    .clients-page {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      border: 1px solid #e9e4de;
+    }
+
+    .clients-page h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .clients-page p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 15px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .clients-page ul {
+      margin: 20px 0 30px;
+      padding-left: 20px;
+      font-size: 17px;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #d6b187;
+      outline: none;
+      box-shadow: 0 0 6px rgba(214,177,135,0.3);
+    }
+
+    .contact-form textarea {
+      height: 140px;
+      resize: none;
+    }
+
+    .contact-form button {
+      background: #d6b187;
+      color: #fff;
+      border: none;
+      padding: 14px 32px;
+      font-size: 17px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      width: 100%;
+    }
+
+    .contact-form button:hover {
+      background: #b8966d;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      font-size: 14px;
+      color: #999;
+    }
+
+    @media(max-width: 768px){
+      nav.top-menu a {
+        display: block;
+        margin: 10px auto;
+      }
+      .clients-page {
+        margin: 30px 10px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/logo.jpg" alt="Elyvence Candle">
+    </div>
+    <nav class="top-menu">
+      <a href="index.html">Главная</a>
+      <a href="collection.html">Коллекция</a>
+      <a href="cart.html">Корзина</a>
+    </nav>
+  </div>
+</header>
+
+<section class="clients-page">
+  <h1>Стать постоянным клиентом</h1>
+  <p>Если вы владелец заведения и хотите регулярно заказывать свечи по оптовым ценам, мы готовы предложить индивидуальные условия сотрудничества:</p>
+  <ul>
+    <li>Оптовые цены на весь ассортимент</li>
+    <li>Заключение официального договора</li>
+    <li>Согласование сроков поставки</li>
+    <li>Возможность эксклюзивных ароматов для вашего бизнеса</li>
+  </ul>
+  <form class="contact-form">
+    <input type="text" placeholder="Название компании" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Опишите ваш запрос"></textarea>
+    <button type="submit">Запросить договор</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 Elyvence Candle. Все права защищены.
+</footer>
+</body>
+</html>
