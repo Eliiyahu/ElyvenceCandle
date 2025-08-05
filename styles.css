@@ -512,7 +512,7 @@ section {
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 1100;
+    z-index: 2001;
   }
 
   .burger span {
@@ -534,6 +534,7 @@ section {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
 
 
 
