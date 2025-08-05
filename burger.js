@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const burger = document.querySelector(".burger");
-  const navMenu = document.querySelector(".top-menu");
-  const overlay = document.querySelector(".overlay");
+    const burger = document.querySelector(".burger");
+    const navMenu = document.querySelector(".top-menu");
+    const overlay = document.createElement("div");
+    overlay.classList.add("overlay");
+    document.body.appendChild(overlay);
 
-  if (burger && navMenu && overlay) {
     burger.addEventListener("click", () => {
-      burger.classList.toggle("active");
-      navMenu.classList.toggle("show");
-      overlay.classList.toggle("active");
+        const isActive = navMenu.classList.toggle("show");
+        burger.classList.toggle("active");
+        overlay.classList.toggle("active", isActive);
+        document.body.classList.toggle("menu-open", isActive);
     });
 
     overlay.addEventListener("click", () => {
-      burger.classList.remove("active");
-      navMenu.classList.remove("show");
-      overlay.classList.remove("active");
+        navMenu.classList.remove("show");
+        burger.classList.remove("active");
+        overlay.classList.remove("active");
+        document.body.classList.remove("menu-open");
     });
-  }
 });
