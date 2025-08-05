@@ -442,19 +442,19 @@ section {
   .top-menu {
     position: fixed;
     top: 0;
-    left: -100%; /* прячем за левый край */
+    left: -100%;
     width: 70%;
     height: 100%;
     background: #fff;
     flex-direction: column;
     padding: 80px 20px;
     gap: 20px;
-    transition: left 0.3s ease; /* анимация */
+    transition: left 0.3s ease;
     z-index: 1000;
   }
 
   .top-menu.show {
-    left: 0; /* показываем меню */
+    left: 0;
   }
 
   .burger {
@@ -467,7 +467,7 @@ section {
     position: absolute;
     right: 20px;
     top: 20px;
-    z-index: 2001; /* выше меню */
+    z-index: 2001;
   }
 
   .burger span {
@@ -475,21 +475,39 @@ section {
     height: 3px;
     background: #333;
     border-radius: 3px;
+    transition: 0.3s;
   }
-}
-
 
   /* Анимация крестика */
   .burger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
+
   .burger.active span:nth-child(2) {
     opacity: 0;
   }
+
   .burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Затемнение фона */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 900;
+    display: none;
+  }
+
+  .overlay.active {
+    display: block;
   }
 }
+
 
 
 
