@@ -474,4 +474,26 @@ section {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+@media (max-width: 768px) {
+  .burger {
+    display: flex; /* показываем бургер на мобилке */
+  }
+
+  .top-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* скрываем меню за экраном */
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    background: #fff;
+    padding: 80px 20px;
+    transition: 0.3s;
+  }
+
+  .top-menu.show {
+    right: 0; /* выезжает меню */
+  }
+}
+
 
