@@ -482,16 +482,15 @@ section {
     width: 70%;
     height: 100%;
     background: #fff;
-    display: flex;
     flex-direction: column;
     padding: 80px 20px;
     gap: 20px;
-    transition: left 0.3s ease; /* плавное выдвижение */
+    transition: left 0.3s ease; /* анимация */
     z-index: 1000;
   }
 
   .top-menu.show {
-    left: 0; /* вот ключевой момент — теперь меню выезжает */
+    left: 0; /* показываем меню */
   }
 
   .burger {
@@ -515,6 +514,7 @@ section {
   }
 }
 
+
   /* Анимация крестика */
   .burger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
@@ -526,6 +526,7 @@ section {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
 
 
 
