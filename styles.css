@@ -589,4 +589,49 @@ header {
         display: block;
     }
 }
+/* Общий стиль */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* Меню */
+.top-menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Бургер скрыт на больших экранах */
+.burger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .top-menu {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .top-menu.open {
+        display: flex;
+    }
+}
+
 
