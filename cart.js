@@ -145,3 +145,27 @@ document.getElementById('checkout-form')?.addEventListener('submit', async funct
 
 // === Загружаем корзину при загрузке страницы ===
 document.addEventListener('DOMContentLoaded', renderCart);
+document.addEventListener("DOMContentLoaded", function () {
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (burger && navLinks) {
+        // Создаем overlay для фона
+        const overlay = document.createElement('div');
+        overlay.classList.add('overlay');
+        document.body.appendChild(overlay);
+
+        burger.addEventListener('click', function () {
+            burger.classList.toggle('active');
+            navLinks.classList.toggle('show');
+            overlay.classList.toggle('show');
+        });
+
+        overlay.addEventListener('click', function () {
+            burger.classList.remove('active');
+            navLinks.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+    }
+});
+
