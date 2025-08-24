@@ -530,6 +530,27 @@ section {
   display: block;
 }
 
+.slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+  opacity: 1;
+  position: relative;
+}
+
+
 
 
 
