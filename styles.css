@@ -530,6 +530,58 @@ section {
   display: block;
 }
 
+/* 1) Абсолютно точный центр всей секции с карточками */
+section.features-panel {
+  display: flex;                 /* центрируем детей по горизонтали */
+  justify-content: center;
+  width: 100%;
+}
+
+/* 2) Белая "коробка": симметричные поля и адекватная ширина */
+.features-panel .white-box {
+  width: min(92vw, 1560px);      /* можно 1500–1600px под вкус */
+  margin: 0 auto 60px;           /* центрирование */
+  padding: clamp(32px, 4vw, 56px);
+  box-sizing: border-box;
+}
+
+/* 3) Внутренний ряд (фото + текст): без лишних внутренних паддингов,
+      только за счёт .white-box, и аккуратный промежуток между колонками */
+.feature-block .container {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3vw, 48px);
+  padding-inline: 0;             /* важно: равные поля задаёт .white-box */
+}
+
+/* Чередование блоков (шахматка) */
+.feature-block.reverse .container {
+  flex-direction: row-reverse;
+}
+
+/* 4) Фото: не раздуваем на весь широченный экран */
+.block-image, .block-text { flex: 1 1 0; }
+
+.block-image img {
+  width: 100%;
+  max-width: 680px;              /* верни контроль размера картинки */
+  height: auto;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
+
+/* 5) Текст не «растекается» на слишком длинные строки */
+.block-text { max-width: 75ch; }
+
+/* 6) Мобилка — в колонку */
+@media (max-width: 900px) {
+  .feature-block .container,
+  .feature-block.reverse .container {
+    flex-direction: column;
+  }
+}
+
 
 
 
