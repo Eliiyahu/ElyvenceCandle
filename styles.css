@@ -530,25 +530,39 @@ section {
   display: block;
 }
 
+/* Универсальный медиа-контейнер для карточек и слайдера */
 .slider {
   position: relative;
   width: 100%;
-  height: auto;
   overflow: hidden;
+  border-radius: 16px;          /* подправь под свой дизайн */
+  /* Фолбэк-высота (работает везде) */
+  height: clamp(220px, 30vw, 380px);
 }
 
+/* Если браузер поддерживает aspect-ratio — используем красивое соотношение */
+@supports (aspect-ratio: 16 / 9) {
+  .slider {
+    height: auto;
+    aspect-ratio: 16 / 9;       /* 16:9 на мобильных */
+  }
+  @media (min-width: 1024px) {
+    .slider { aspect-ratio: 3 / 2; } /* 3:2 на десктопе */
+  }
+}
+
+/* Картинки в слайдере заполняют контейнер и не искажаются */
 .slider img {
   position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;            /* обрезает лишнее по краям */
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity .8s ease;
 }
+.slider img.active { opacity: 1; }
 
-.slider img.active {
-  opacity: 1;
-  position: relative;
-}
 
 
 
