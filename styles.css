@@ -654,6 +654,56 @@ section.about-panel {
   }
 }
 
+/* 0) Центр без "ухода" из-за скроллбара */
+@supports (scrollbar-gutter: stable) {
+  html { scrollbar-gutter: stable both-edges; }
+}
+/* Фолбэк, если свойство не поддерживается (Safari и т.п.) */
+html { overflow-y: scroll; }
+
+/* 1) Большая белая коробка по центру и одинаковые поля */
+.features-panel .white-box {
+  width: min(92vw, 1560px);   /* твоя целевая ширина */
+  margin: 0 auto 60px;        /* чёткое центрирование */
+  padding: clamp(32px, 4vw, 56px); /* одинаковые отступы слева/справа */
+  box-sizing: border-box;
+}
+
+/* 2) Шахматная раскладка: равные отступы внутри и чередование сторон */
+.feature-block .container {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3vw, 48px);   /* расстояние между фото и текстом */
+  padding-inline: clamp(24px, 3vw, 48px); /* равные поля от краёв white-box */
+  width: 100%;
+}
+
+/* инвертируем порядок во "втором" и т.д. блоках через класс .reverse */
+.feature-block.reverse .container { flex-direction: row-reverse; }
+
+/* 3) Пропорции: фото и текст занимают равные доли (можешь подправить) */
+.block-image, .block-text { flex: 1 1 0; }
+
+.block-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* 4) Комфортная длина строки, чтобы текст не растекался */
+.block-text { max-width: 75ch; }
+
+/* 5) Мобильная адаптация */
+@media (max-width: 900px) {
+  .feature-block .container,
+  .feature-block.reverse .container {
+    flex-direction: column;
+    padding-inline: clamp(16px, 4vw, 24px);
+  }
+}
+
 
 
 
