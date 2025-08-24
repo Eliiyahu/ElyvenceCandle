@@ -685,6 +685,26 @@ section {
   }
 }
 
+.card img,
+.product-card img {
+  border: 2px solid #d6b187;  /* кремовый цвет как у кнопки */
+  border-radius: 8px;
+  padding: 4px;
+  background: #fff;
+}
+
+.card a,
+.product-card a {
+  color: #333;             /* тёмно-серый для текста */
+  text-decoration: none;   /* убираем подчёркивание */
+  font-weight: 600;        /* можно чуть жирнее */
+}
+
+.card a:hover,
+.product-card a:hover {
+  color: #d6b187;          /* при наведении — кремовый */
+  text-decoration: underline; /* подчёркивание при ховере */
+}
 
 
 
