@@ -606,6 +606,40 @@ section {
   }
 }
 
+/* двухколоночная компоновка для блоков-фич */
+.feature-block .container{
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+/* реверс (картинка справа, текст слева) */
+.feature-block.reverse .container{ flex-direction: row-reverse; }
+
+/* колонка с изображением/слайдером: фиксированная ширина */
+.feature-block .container .slider{
+  flex: 0 0 600px;     /* 560–640 подгони по вкусу */
+  width: auto;         /* переопределяем твоё .slider {width:100%} */
+}
+
+/* текстовая колонка занимает всё остальное — без «сосиски» */
+.feature-block .container .block-text{
+  flex: 1 1 auto;
+  max-width: 90ch;     /* комфортная длина строки; можешь 80–100ch */
+}
+
+/* адаптация: на более узких экранах ужимаем колонку с фото */
+@media (max-width: 1300px){
+  .feature-block .container .slider{ flex-basis: 520px; }
+}
+
+/* мобилка — в одну колонку */
+@media (max-width: 900px){
+  .feature-block .container,
+  .feature-block.reverse .container{ flex-direction: column; }
+  .feature-block .container .slider{ flex-basis: auto; width: 100%; }
+}
+
 
 
 
