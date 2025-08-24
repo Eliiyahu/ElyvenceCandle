@@ -123,8 +123,28 @@
     © 2025 Elyvence Candle. Все права защищены.
   </footer>
 <script src="burger.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sliders = document.querySelectorAll(".slider");
+
+  sliders.forEach(slider => {
+    const images = slider.querySelectorAll("img");
+    let index = 0;
+
+    // включаем первую картинку
+    images[index].classList.add("active");
+
+    setInterval(() => {
+      images[index].classList.remove("active");
+      index = (index + 1) % images.length;
+      images[index].classList.add("active");
+    }, 3000); // меняется каждые 3 секунды
+  });
+});
+</script>
 </body>
 </html>
+
 
 
 
