@@ -557,7 +557,7 @@ section {
    текст = гибкая колонка, зазор поменьше */
 .feature-block .container{
   display: grid;
-  grid-template-columns: minmax(560px, 600px) 1fr; /* фото слева 560–600px, текст занимает остальное */
+  grid-template-columns: minmax(400px, 600px) 1fr; /* фото слева 400–600px, текст занимает остальное */
   align-items: center;
   gap: clamp(16px, 2vw, 24px);                     /* меньше расстояние между фото и текстом */
   padding-inline: 0;
@@ -565,7 +565,7 @@ section {
 
 /* Зеркальная версия для "шахматки" (когда картинка справа) */
 .feature-block.reverse .container{
-  grid-template-columns: 1fr minmax(560px, 600px);
+  grid-template-columns: 1fr minmax(400px, 600px);
 }
 
 /* Текстовая колонка: пусть использует доступную ширину */
@@ -582,6 +582,7 @@ section {
   }
   .block-text{ max-width: 65ch; }
 }
+
 
 
 
