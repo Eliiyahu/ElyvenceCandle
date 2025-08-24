@@ -583,6 +583,29 @@ section {
   .block-text{ max-width: 65ch; }
 }
 
+/* Реверс: картинка справа, текст слева */
+.feature-block.reverse .container {
+  grid-template-columns: 1fr minmax(400px, 600px);
+}
+
+.feature-block.reverse .block-image { grid-column: 2; }
+.feature-block.reverse .block-text  { grid-column: 1; }
+
+/* Если класс reverse стоит на .container (а не на .feature-block) — альтернативные селекторы */
+.feature-block .container.reverse { grid-template-columns: 1fr minmax(400px, 600px); }
+.feature-block .container.reverse .block-image { grid-column: 2; }
+.feature-block .container.reverse .block-text  { grid-column: 1; }
+
+/* На мобильных возвращаем естественный порядок в одну колонку */
+@media (max-width: 900px){
+  .feature-block.reverse .block-image,
+  .feature-block.reverse .block-text,
+  .feature-block .container.reverse .block-image,
+  .feature-block .container.reverse .block-text {
+    grid-column: auto;
+  }
+}
+
 
 
 
