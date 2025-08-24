@@ -706,6 +706,48 @@ section {
   text-decoration: underline; /* подчёркивание при ховере */
 }
 
+/* === Каталог: рамка у изображений в карточках === */
+.catalog .product img {
+  display: block;
+  width: 100%;
+  border: 2px solid #d6b187;   /* кремовый как у кнопки */
+  border-radius: 12px;
+  padding: 4px;                /* «прослойка» между картинкой и рамкой */
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,.04); /* очень лёгкая глубина */
+}
+
+/* по желанию — лёгкий «подъём» при ховере */
+.catalog .product img:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+  transition: .2s ease;
+}
+
+/* === Цвет ссылок (названия товаров) === */
+.catalog .product h3 a {
+  color: #333;                 /* базовый цвет текста */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.catalog .product h3 a:hover {
+  color: #d6b187;              /* кремовый при наведении */
+  text-decoration: underline;
+}
+
+/* убираем фиолетовый «visited» и держим фирменный стиль */
+.catalog .product h3 a:visited {
+  color: #333;
+}
+
+/* доступность: фокус клавиатурой в фирменном цвете */
+.catalog .product h3 a:focus-visible {
+  outline: 2px solid #d6b187;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
 
 
 
