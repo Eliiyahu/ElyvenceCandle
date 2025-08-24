@@ -538,17 +538,17 @@ section {
 }
 
 .slider img {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  width: 100%;          /* картинка всегда по ширине контейнера */
+  height: 300px;        /* фиксированная высота блока (можешь менять) */
+  object-fit: cover;    /* обрезает лишнее, не искажая пропорции */
+  border-radius: 8px;   /* (по желанию) скругление углов */
 }
 
 .slider img.active {
   opacity: 1;
   position: relative;
 }
+
 
 
 
