@@ -2,7 +2,7 @@
 
 /* === Общие контейнеры === */
 .container {
-  max-width: 2000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -562,6 +562,7 @@ section {
   transition: opacity .8s ease;
 }
 .slider img.active { opacity: 1; }
+
 
 
 
