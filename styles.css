@@ -641,6 +641,50 @@ section {
 }
 
 
+/* Карточка товара: белая коробка по центру */
+.product-page{
+  /* превращаем в аккуратную “карточку” */
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+
+  /* ширина и отступы */
+  width: min(92vw, 1400px);      /* можешь 1300–1500 под вкус */
+  margin: clamp(24px,4vw,56px) auto;
+  padding: clamp(24px,3vw,48px);
+
+  /* раскладка: слева галерея, справа текст */
+  display: grid;                 /* переопределяем flex из встроенного стиля */
+  grid-template-columns: minmax(460px, 560px) 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  align-items: start;
+  box-sizing: border-box;
+}
+
+/* галерея внутри карточки */
+.product-page .gallery{
+  max-width: none;               /* даём колонке решать ширину */
+  width: 100%;
+  background: #fafafa;           /* мягкая подложка (можно убрать) */
+  padding: 8px;
+  border-radius: 12px;
+}
+
+/* точки управления пусть не “липнут” к краям */
+.product-page .gallery-controls{ margin-top: 10px; }
+
+/* текстовая колонка без “сосиски” */
+.product-page .product-details{
+  max-width: 85ch;               /* комфортная длина строки */
+}
+
+/* планшет/мобилка — одна колонка */
+@media (max-width: 900px){
+  .product-page{
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
