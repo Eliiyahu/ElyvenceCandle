@@ -563,6 +563,49 @@ section {
 }
 .slider img.active { opacity: 1; }
 
+/* === Ширина центральных блоков на всех секциях === */
+/* Подхватываем типовые "коробки" по центру */
+.hero-panel .white-box,
+.features-panel .white-box,
+.about-panel .white-box,
+.section .white-box {
+  /* На мобильных/планшетах тянемся к 92vw, но не шире max */
+  width: min(92vw, 1560px);
+  margin-inline: auto;
+}
+
+/* На крупных десктопах даём больше воздуха */
+@media (min-width: 1200px) {
+  .hero-panel .white-box,
+  .features-panel .white-box,
+  .about-panel .white-box,
+  .section .white-box {
+    /* Удобное ограничение: от 1200px до 1560px, с адаптацией */
+    max-width: clamp(1200px, 90vw, 1560px);
+  }
+}
+
+/* Если есть ещё внешние контейнеры, тоже слегка расширим */
+section.hero-panel,
+section.features-panel,
+section.about-panel {
+  width: 100%;
+  padding-inline: clamp(16px, 2vw, 32px); /* безопасные поля слева/справа */
+}
+
+/* Чтобы длинные абзацы не растягивались слишком широко (читабельность) */
+.block-text {
+  max-width: 75ch; /* ~75 символов в строке — комфортно для чтения */
+}
+
+/* Картинки в "шахматных" блоках пусть масштабируются красиво */
+.block-image img {
+  width: 100%;
+  height: auto;
+  max-width: none;   /* убираем прежний "потолок" 500px, если стоял */
+  border-radius: 8px;
+  object-fit: cover;
+}
 
 
 
