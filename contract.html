@@ -127,12 +127,44 @@
     <li>Опции по дизайну (банка, крышка, этикетка)</li>
   </ul>
   <p>Заполните форму ниже, и мы свяжемся с вами для обсуждения деталей:</p>
-  <form class="contact-form">
+  <form class="contact-form send-form">
     <input type="text" name="name" placeholder="Ваше имя" required>
     <input type="email" name="email" placeholder="Ваш email" required>
     <textarea name="message" placeholder="Опишите ваш запрос (кол-во, аромат, особенности)" required></textarea>
     <button type="submit">Отправить запрос</button>
   </form>
+    <script>
+    const BOT_TOKEN = "8463454091:AAGjJWDpsrtPr7HCzvSwRybATEjD_UQptGA"; 
+    const CHAT_ID = "617776567"; 
+    const URI_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    document.querySelectorAll('.send-form').forEach(form => {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let message = "<b>Новая заявка с сайта Elyvence Candle</b>\n";
+        const formData = new FormData(form);
+        formData.forEach((value, key) => {
+          message += `<b>${key}:</b> ${value}\n`;
+        });
+
+        fetch(URI_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+            parse_mode: 'HTML'
+          })
+        })
+        .then(() => {
+          alert("Спасибо! Ваша заявка отправлена.");
+          form.reset();
+        })
+        .catch(() => alert("Ошибка отправки. Попробуйте позже."));
+      });
+    });
+  </script>
 </section>
 
 <footer>
@@ -140,3 +172,4 @@
 </footer>
 </body>
 </html>
+
