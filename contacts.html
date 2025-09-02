@@ -64,12 +64,44 @@
     <p>Instagram: <a href="https://www.instagram.com/elyvence_candle/" target="_blank">@elyvence_candle</a></p>
   </div>
 
-  <form class="contact-form">
+  <form class="contact-form send-form">
     <input type="text" name="name" placeholder="Ваше имя" required>
     <input type="email" name="email" placeholder="Ваш email" required>
     <textarea name="message" rows="5" placeholder="Ваше сообщение"></textarea>
     <button type="submit">Отправить</button>
   </form>
+    <script>
+    const BOT_TOKEN = "8463454091:AAGjJWDpsrtPr7HCzvSwRybATEjD_UQptGA"; 
+    const CHAT_ID = "617776567"; 
+    const URI_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    document.querySelectorAll('.send-form').forEach(form => {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let message = "<b>Новая заявка с сайта Elyvence Candle</b>\n";
+        const formData = new FormData(form);
+        formData.forEach((value, key) => {
+          message += `<b>${key}:</b> ${value}\n`;
+        });
+
+        fetch(URI_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+            parse_mode: 'HTML'
+          })
+        })
+        .then(() => {
+          alert("Спасибо! Ваша заявка отправлена.");
+          form.reset();
+        })
+        .catch(() => alert("Ошибка отправки. Попробуйте позже."));
+      });
+    });
+  </script>
 </section>
 
 <footer>
@@ -77,3 +109,4 @@
 </footer>
 </body>
 </html>
+
