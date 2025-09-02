@@ -162,12 +162,48 @@
     <li>Согласование сроков поставки</li>
     <li>Возможность эксклюзивных ароматов для вашего бизнеса</li>
   </ul>
-  <form class="contact-form">
-    <input type="text" placeholder="Название компании" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Опишите ваш запрос"></textarea>
+  
+  <!-- Форма -->
+  <form class="send-form">
+    <input type="text" name="Название компании" placeholder="Название компании" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    <textarea name="Запрос" placeholder="Опишите ваш запрос"></textarea>
     <button type="submit">Запросить договор</button>
   </form>
+
+  <!-- Скрипт -->
+  <script>
+    const BOT_TOKEN = "8463454091:AAGjJWDpsrtPr7HCzvSwRybATEjD_UQptGA"; 
+    const CHAT_ID = "617776567"; 
+    const URI_API = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+    document.querySelectorAll('.send-form').forEach(form => {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let message = "<b>Новая заявка с сайта Elyvence Candle</b>\n";
+        const formData = new FormData(form);
+        formData.forEach((value, key) => {
+          message += `<b>${key}:</b> ${value}\n`;
+        });
+
+        fetch(URI_API, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+            parse_mode: 'HTML'
+          })
+        })
+        .then(() => {
+          alert("Спасибо! Ваша заявка отправлена.");
+          form.reset();
+        })
+        .catch(() => alert("Ошибка отправки. Попробуйте позже."));
+      });
+    });
+  </script>
 </section>
 
 <footer>
